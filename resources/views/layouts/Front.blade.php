@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>School Alumni</title>
+  <!-- Favicon -->
+  <link rel="icon" href="{{ asset('download.jpeg') }}" type="image/x-icon">
   <!-- Bootstrap CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <style>
@@ -323,15 +325,14 @@ body {
 
   <!-- Navigation Bar -->
   <nav class="navbar">
-    <a href="#">IST Alumini</a>
+    <a href="/">IST Alumni</a>
     <ul class="nav-links">
-        <li><a href="/">Home</a></li>
+        <li><a href="/dashboard">Dashboard</a></li>
         <li><a href="/AluminiStories">Alumni Stories</a></li>
         <li><a href="{{route('events.index')}}">Events</a></li>
         <li><a href="/contact">Contact Us</a></li>
         <li><a href="/login">Login</a></li>
-        <li><<a href="/register">Register</a></li>
-
+        <li><a href="/register">Register</a></li>
     </ul>
 </nav>
 @yield("content")
