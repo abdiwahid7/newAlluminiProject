@@ -1,4 +1,4 @@
-@extends('layouts.Front')
+@extends('adminlayout.admin')
 @section('content')
 
 <section class="alumni-success">

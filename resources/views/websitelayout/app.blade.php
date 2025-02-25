@@ -328,8 +328,8 @@ body {
     <a href="/">IST Alumni</a>
     <ul class="nav-links">
         <li><a href="/dashboard">Dashboard</a></li>
-        <li><a href="/AluminiStories">Alumni Stories</a></li>
-        <li><a href="{{route('events.index')}}">Events</a></li>
+        <li><a href="/Alumini">Alumni Stories</a></li>
+        <li><a href="/frontevents">Events</a></li>
         <li><a href="/contact">Contact Us</a></li>
         <li><a href="/login">Login</a></li>
         <li><a href="/register">Register</a></li>

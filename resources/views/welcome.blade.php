@@ -1,4 +1,4 @@
-@extends('layouts.Front')
+@extends('websitelayout.app')
 @section('content')
 <section class="welcome-alumni">
     <h2 class="section-title">Welcome to IST Alumni</h2>

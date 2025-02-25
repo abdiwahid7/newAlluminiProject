@@ -17,6 +17,13 @@ class EventController extends Controller
 
         return view('events.index', compact('events'));
     }
+    public function frontend()
+    {
+
+        $events = Event::all();
+
+        return view('events.front', compact('events'));
+    }
 
     /**
      * Show the form for creating a new resource.
