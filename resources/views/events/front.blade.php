@@ -11,9 +11,7 @@
         {{ session('success') }}
     </div>
     @endif
-    <a href="{{ route('events.create') }}">
-        <button class="btn btn-primary mb-5">Create an event</button>
-    </a>
+   
 
     <div class="row">
         @foreach ($events as $event)

@@ -1,9 +1,6 @@
-@extends('adminlayout.admin')
+@extends('websitelayout.app')
 @section('content')
 
-<a href="{{ route('alumini.create') }}">
-        <button class="btn btn-primary mb-5">Create Alumini</button>
-    </a>
 <section class="alumni-success">
     <h2 class="section-title">Outstanding Alumni Success Stories</h2>
     <div class="success-grid">
