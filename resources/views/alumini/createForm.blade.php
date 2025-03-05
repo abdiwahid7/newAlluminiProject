@@ -5,7 +5,7 @@
 <div class="form-container">
     <h1 class="form-title">Create Alumini</h1>
 
-    <form action="{{ route('alumini.store') }}" method="POST">
+    <form action="{{ route('alumini.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <label for="title">Enter Post Title</label>
@@ -17,7 +17,12 @@
             <input type="text" name="location" id="location" class="form-control">
         </div>
 
-        <button type="submit" class="btn btn-primary">Create Event</button>
+        <div class="form-group">
+            <label for="image">Upload Image</label>
+            <input type="file" name="image" id="image" class="form-control">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Create Alumini</button>
     </form>
 </div>
 

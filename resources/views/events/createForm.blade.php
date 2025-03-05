@@ -5,7 +5,7 @@
 <div class="form-container">
     <h1 class="form-title">Create Event</h1>
 
-    <form action="{{ route('events.store') }}" method="POST">
+    <form action="{{ route('events.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <label for="title">Enter Post Title</label>
@@ -17,6 +17,10 @@
             <input type="text" name="location" id="location" class="form-control">
         </div>
 
+        <div class="form-group">
+            <label for="image">Upload Event Image</label>
+            <input type="file" name="image" id="image" class="form-control" accept="image/*">
+        </div>
         <button type="submit" class="btn btn-primary">Create Event</button>
     </form>
 </div>

@@ -11,7 +11,7 @@
         {{ session('success') }}
     </div>
     @endif
-   
+
 
     <div class="row">
         @foreach ($events as $event)
@@ -21,9 +21,7 @@
                     <h5 class="card-title fw-bold">{{ $event->title }}</h5>
                     <p class="card-text"><strong>Location:</strong> {{ $event->location }}</p>
                     <p class="small">Event ID: {{ $event->id }}</p>
-                    <p>
-                        <a href="{{ route('events.edit', $event->id) }}" class="btn btn-primary">Edit post</a>
-                    </p>
+                   
                 </div>
             </div>
         </div>

@@ -5,7 +5,6 @@
 <div class="container mt-4">
     <h1 class="text-center mb-4">Events Page</h1>
 
-    <!-- receive session message -->
     @if (session('success'))
     <div class="alert alert-success">
         {{ session('success') }}
@@ -23,15 +22,22 @@
                     <h5 class="card-title fw-bold">{{ $event->title }}</h5>
                     <p class="card-text"><strong>Location:</strong> {{ $event->location }}</p>
                     <p class="small">Event ID: {{ $event->id }}</p>
-                    <p>
-                        <a href="{{ route('events.edit', $event->id) }}" class="btn btn-primary">Edit post</a>
-                    </p>
+                    @if ($event->image_path)
+                        <img src="{{ asset('storage/' . $event->image_path) }}" class="card-img-top" alt="{{ $event->title }}">
+                    @endif
+                    <div class="d-flex justify-content-between mt-3">
+                        <a href="{{ route('events.edit', $event->id) }}" class="btn btn-primary">Edit</a>
+                        <form action="{{ route('events.destroy', $event->id) }}" method="POST" style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
         @endforeach
     </div>
-
 </div>
 
 <style>

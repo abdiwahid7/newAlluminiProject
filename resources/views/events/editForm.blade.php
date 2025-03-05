@@ -6,7 +6,7 @@
 <div class="form-container">
     <h1 class="form-title">Edit Event</h1>
 
-    <form action="{{ route('events.update', $event->id) }}" method="POST">
+    <form action="{{ route('events.update', $event->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="form-group">
@@ -19,6 +19,14 @@
             <input type="text" name="location" id="location" class="form-control" value="{{ old('location', $event->location) }}">
         </div>
 
+        <div class="form-group">
+            <label for="image">Upload Event Image</label>
+            <input type="file" name="image" id="image" class="form-control" accept="image/*">
+        </div>
+        <div class="form-group">
+            <label for="current_image">Current Image</label>
+            <img src="{{ asset('storage/' . $event->image_path) }}" alt="{{ $event->title }}" class="img-fluid">
+        </div>
         <button type="submit" class="btn btn-primary">Update Event</button>
     </form>
 </div>
