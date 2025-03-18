@@ -18,7 +18,7 @@
                 <li class="py-2 px-4 hover:bg-blue-700 rounded"><a href="/dashboard">Dashboard</a></li>
                 <li class="py-2 px-4 hover:bg-blue-700 rounded"><a href="{{route('events.index')}}">Events</a></li>
                 <li class="py-2 px-4 hover:bg-blue-700 rounded"><a href="/AluminiStories">Alumni Stories</a></li>
-                <li class="py-2 px-4 hover:bg-blue-700 rounded"><a href="#">Settings</a></li>
+
             </ul>
         </div>
 

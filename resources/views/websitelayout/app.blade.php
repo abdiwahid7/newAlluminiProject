@@ -328,7 +328,7 @@ body {
     <a href="/">IST Alumni</a>
     <ul class="nav-links">
         <li><a href="/dashboard">Dashboard</a></li>
-        <li><a href="/Alumini">Alumni Stories</a></li>
+        <li><a href="/frontalumini">Alumni Stories</a></li>
         <li><a href="/frontevents">Events</a></li>
         <li><a href="/contact">Contact Us</a></li>
         <li><a href="/login">Login</a></li>
@@ -341,8 +341,8 @@ body {
   <!-- Footer -->
   <footer class="footer">
     <ul class="footer-links">
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="http://127.0.0.1:8000/">About Us</a></li>
+        <li><a href="http://127.0.0.1:8000/contact">Contact</a></li>
         <li><a href="#">Privacy Policy</a></li>
         <li><a href="#">Terms of Service</a></li>
     </ul>

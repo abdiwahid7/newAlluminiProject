@@ -1,9 +1,10 @@
-@extends('adminlayout.admin')
+x@extends('adminlayout.admin')
 
 @section('content')
 
-<div class="container mt-4">
-    <h1 class="text-center mb-4">Events Page</h1>
+<section class="alumni-success">
+    <h2 class="section-title">Upcoming Events</h2>
+    <div class="success-grid">
 
     @if (session('success'))
     <div class="alert alert-success">
@@ -14,31 +15,24 @@
         <button class="btn btn-primary mb-5">Create an event</button>
     </a>
 
-    <div class="row">
-        @foreach ($events as $event)
-        <div class="col-md-4 mb-4">
-            <div class="card event-card h-100">
-                <div class="card-body">
-                    <h5 class="card-title fw-bold">{{ $event->title }}</h5>
-                    <p class="card-text"><strong>Location:</strong> {{ $event->location }}</p>
-                    <p class="small">Event ID: {{ $event->id }}</p>
-                    @if ($event->image_path)
-                        <img src="{{ asset('storage/' . $event->image_path) }}" class="card-img-top" alt="{{ $event->title }}">
-                    @endif
-                    <div class="d-flex justify-content-between mt-3">
-                        <a href="{{ route('events.edit', $event->id) }}" class="btn btn-primary">Edit</a>
-                        <form action="{{ route('events.destroy', $event->id) }}" method="POST" style="display:inline;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Delete</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        @endforeach
+    @foreach ($events as $event)
+    <div class="success-card">
+        <h4>{{ $event->title }}</h4>
+        <p><strong>Location:</strong> {{ $event->location }}</p>
+        <p>Event ID: {{ $event->id }}</p>
+        @if ($event->image_path)
+            <img src="{{ asset('storage/' . $event->image_path) }}" class="card-img-top" alt="{{ $event->title }}">
+        @endif
+        <a href="{{ route('events.edit', $event->id) }}" class="btn">Edit</a>
+        <form action="{{ route('events.destroy', $event->id) }}" method="POST" style="display:inline;">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
     </div>
-</div>
+    @endforeach
+    </div>
+</section>
 
 <style>
 .alert {
@@ -63,45 +57,44 @@
     background-color: #0a9396;
 }
 
-.event-card {
+.success-card {
     background: white;
-    padding: 20px;
+    padding: 15px;
     border-radius: 8px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    text-align: center;
-    border-left: 6px solid #f4a261; /* Accent left border */
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    width: 250px; /* Smaller width for the boxes */
+    transition: transform 0.3s ease-in-out;
 }
 
-.event-card:hover {
+.success-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
 }
 
-.event-card .card-title {
-    margin-bottom: 10px;
-    font-size: 1.6rem;
+.success-card h4 {
+    margin-bottom: 5px;
+    font-size: 1.4rem; /* Adjusted font size */
     color: #e76f51;
 }
 
-.event-card .card-text {
-    font-size: 1rem;
+.success-card p {
+    font-size: 0.9rem; /* Adjusted font size */
     color: #555;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
-.event-card .btn {
+.success-card .btn {
     display: inline-block;
-    padding: 8px 15px;
+    padding: 8px 12px;
     background-color: #f4a261;
     color: white;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 0.9rem; /* Adjusted font size */
     border-radius: 6px;
     transition: background-color 0.3s ease-in-out;
 }
 
-.event-card .btn:hover {
+.success-card .btn:hover {
     background-color: #e76f51;
 }
 </style>

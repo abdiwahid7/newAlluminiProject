@@ -1,8 +1,8 @@
 <?php
 
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\AlumniController; // Remove this line
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\AlumniController;
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
@@ -23,9 +23,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/AluminiStories', function () {
-    return view('AluminiStories');
-});
+// Route::get('/alumni', [AlumniController::class, 'index'])->name('alumni.index');
+
+Route::get('/AluminiStories', [AlumniController::class, 'index'])->name('alumni.stories');
 
 Route::get('/contact', function () {
     return view('contact');
@@ -34,7 +34,11 @@ Route::get('/contact', function () {
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth'])->name('dashboard');
 
 Route::resource('events', EventController::class);
+// Route::resource('alumni', AlumniController::class);
+Route::get('contact', [AlumniController::class, 'contact'])->name('contact');
+Route::post('contact', [AlumniController::class, 'submitContact'])->name('contact.submit');
 Route::get('/frontevents', [EventController::class, 'frontend']);
+Route::get('/frontalumni', [AlumniController::class, 'frontend']);
 
 // Profile routes
 Route::middleware('auth')->group(function () {
